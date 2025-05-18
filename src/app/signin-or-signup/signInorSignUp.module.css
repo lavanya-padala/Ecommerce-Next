@@ -1,0 +1,73 @@
+.container {
+    width: 100%;
+    max-width: 400px;
+    margin: 60px auto;
+    padding: 24px;
+    min-height: 100vh;
+    padding: 0 1rem;
+  }
+  
+  .card {
+    margin-top: 3rem;
+    max-width: 400px;
+    width: 100%;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  
+  
+  .card h2 {
+    margin-bottom: 1rem;
+    font-size: 1.75rem;
+    font-weight: 700;
+  }
+  
+  .card label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+  }
+  
+  .card input {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .card button {
+    width: 100%;
+    background-color: #ffd814;
+    color: #111;
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .card button:hover {
+    background-color: #f7ca00;
+  }
+  
+  @media (max-width: 500px) {
+    .card {
+      padding: 1.5rem;
+      max-width: 90%;
+    }
+  
+    .card h2 {
+      font-size: 1.3rem;
+    }
+  
+    .card input,
+    .card button {
+      font-size: 0.95rem;
+    }
+  }
+  

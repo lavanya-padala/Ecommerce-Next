@@ -1,6 +1,12 @@
 import React from 'react'
+import { auth } from './auth'; 
+import { redirect } from 'next/navigation';
 import Header from './header/header'
-function page() {
+const page=async()=> {
+  const session = await auth();
+  if (!session) {
+    redirect('/signin-or-signup');
+  }
   return (
     <div>
       <Header></Header>

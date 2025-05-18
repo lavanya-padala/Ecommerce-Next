@@ -27,13 +27,16 @@ export default function Header() {
     <a href="/kids">Kids</a>
     <a href="/sportswear">Sportswear</a>
     <a href="/bags">Bags</a>
+    <a href='/favourites'>❤Wishlist</a>
+    <a href='/cart'>🛒Cart</a>
+    <a href='/signin-or-signup'>👤Sign Up</a>
   </nav>
 
-  <div className={styles.icons}>
-    <a href='/register'>👤 Sign Up</a>
+  {/* <div className={styles.icons}>
     <a href='/favourites'>❤ Wishlist</a>
     <a href='/cart'>🛒 Cart</a>
-  </div>
+    <a href='/register'>👤 Sign Up</a>
+  </div> */}
 </header>
   );
 }

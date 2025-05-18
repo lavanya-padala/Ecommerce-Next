@@ -1,0 +1,94 @@
+.container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 24px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  background-color: #fff;
+}
+
+.container h2 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.required {
+  color: #555;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.container label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 4px;
+  margin-top: 12px;
+}
+
+.phoneRow {
+  display: flex;
+  gap: 8px;
+}
+
+.container select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.container input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 2px;
+  font-size: 16px;
+  border: 1px solid #999;
+  border-radius: 6px;
+}
+
+.errorInput {
+  border-color: red;
+}
+
+.errorText {
+  color: red;
+  font-size: 14px;
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.button {
+  background-color: #ffd814;
+  border: none;
+  width: 100%;
+  padding: 12px;
+  margin-top: 16px;
+  border-radius: 999px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #f7ca00;
+}
+
+.note {
+  font-size: 14px;
+  margin-top: 12px;
+  color: #555;
+}
+
+.signInPrompt {
+  font-size: 14px;
+  text-align: center;
+  margin-top: 12px;
+}
+
+.signInPrompt a {
+  color: #007185;
+  text-decoration: underline;
+}

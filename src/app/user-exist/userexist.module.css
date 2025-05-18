@@ -1,0 +1,94 @@
+.container {
+  width: 100%;
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 24px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  background-color: white;
+  overflow-wrap: break-word; /* ensures long text breaks inside container */
+}
+
+
+.container h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.emailRow {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  margin-bottom: 12px;
+  gap: 8px; 
+  flex-wrap: wrap; 
+}
+
+
+.change {
+  color: #007185;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.inputRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.forgot {
+  color: #007185;
+  font-weight: normal;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  border: 1px solid #999;
+  border-radius: 6px;
+}
+
+.button {
+  background-color: #ffd814;
+  border: none;
+  width: 100%;
+  padding: 12px;
+  border-radius: 999px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #f7ca00;
+}
+
+.signInBtn {
+  background: none;
+  border: none;
+  color: #007185;
+  cursor: pointer;
+  padding: 0;
+  font-size: 14px;
+  text-align: left;
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .container {
+    margin: 20px auto; /* vertical 20px, horizontal auto */
+    padding: 16px;
+    max-width: calc(100vw - 40px);
+  }
+}
+
+
