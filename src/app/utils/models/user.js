@@ -5,15 +5,15 @@ const userSchema = new mongoose.Schema(
     name: { type: String, required: true },
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
-    verifyToken: { type: String },
-    tokenExpiry: { type: Date },
     profile: { type: String },
-    isVerified:  { type: Boolean, default: false },
-    tokenExpiry: { type: Date, required: false}
+    isVerified: { type: Boolean, default: false, required: true },
+    verifyToken: { type: String },
+    verifyCode: { type: String },
+    codeExpiry: { type: Date },
+    tokenExpiry: { type: Date }
   },
   { timestamps: true }
 );
 
-const UserModel =
-  mongoose.models.user || mongoose.model("user", userSchema);
+const UserModel = mongoose.models.User || mongoose.model("User", userSchema);
 export default UserModel;

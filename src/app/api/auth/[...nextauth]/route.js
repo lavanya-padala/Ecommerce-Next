@@ -27,16 +27,14 @@ export const authOptions = {
       },
     }),
   ],
-
   session: {
-    strategy: "jwt",        
-    maxAge: 60 * 60 * 1,     
-    updateAge: 60 * 60 * 0.5 
+    strategy: "jwt",
+    maxAge: 60 * 60 * 1,
+    updateAge: 60 * 60 * 0.5,
   },
-
-  pages: {
-    // signIn: "/signin",
-  },
-
   secret: process.env.AUTH_SECRET,
 };
+
+// ✅ Add this part to fix the 405 error
+const handler = NextAuth(authOptions);
+export { handler as GET, handler as POST };

@@ -56,8 +56,8 @@ export default function CreateAccount() {
       setServerError(res.error);
     }
     else if(res.success){
-        alert('User Created successful!\nLogin now');
-        router.push(`/signin?email=${encodeURIComponent(form.email)}`);
+        alert('User Created successfully!');
+        router.push(`/verify-email?email=${encodeURIComponent(form.email)}`);
     }
   };
 
@@ -106,7 +106,7 @@ export default function CreateAccount() {
           A verification message will be sent to your email.
         </p>
 
-        <button type="submit" className={styles.button}>Verify email</button>
+        <button type="verify email" className={styles.button}>Verify email</button>
 
         <hr />
 

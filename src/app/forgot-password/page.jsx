@@ -1,13 +1,22 @@
 'use client';
-import React, { useActionState } from 'react';
+import React, { useState } from 'react';
+import { useSearchParams, useRouter } from 'next/navigation';
 import styles from './forgot-password.module.css';
-import { useSearchParams } from 'next/navigation';
 import { forgotPasswordAction } from './forgot-password-server-action';
 
 function Page() {
   const searchParams = useSearchParams();
-  const emailParam = searchParams.get('email') || '';
-  const [state, formAction] = useActionState(forgotPasswordAction, null);
+  const router = useRouter();
+  const defaultEmail = searchParams.get('email') || '';
+  const [email, setEmail] = useState(defaultEmail);
+  const [state, formAction] = React.useActionState(forgotPasswordAction, null);
+
+  React.useEffect(() => {
+    if (state?.success) {
+      alert('Reset link sent to your email!');
+      router.push(`/signin?email=${encodeURIComponent(email)}`);
+    }
+  }, [state, router, email]);
 
   return (
     <div className={styles.container}>
@@ -23,13 +32,13 @@ function Page() {
             name="email"
             type="email"
             placeholder="Your email"
-            defaultValue={emailParam}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)} // ✅ capture the value
             required
           />
+          {state?.error && <p style={{ color: 'red' }}>{state.error}</p>}
           <button type="submit">Continue</button>
         </form>
-
-        {state?.error && <p style={{ color: 'red' }}>{state.error}</p>}
       </div>
     </div>
   );

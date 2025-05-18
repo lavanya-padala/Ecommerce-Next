@@ -1,9 +1,10 @@
 'use client';
-
 import React, { useState } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { signIn } from 'next-auth/react';
 import styles from './signin.module.css';
+import { checkVerifiedUserAction } from './checkVerifiedUserAction';
+
 
 export default function SignIn() {
   const [password, setPassword] = useState('');
@@ -23,11 +24,18 @@ export default function SignIn() {
     if (result?.error) {
       setError(result.error); // This comes from `throw new Error(...)` in authorize
     } else {
-      router.push('/'); // or your desired success route
+      const response = await checkVerifiedUserAction(email);
+      if(response.verified){
+        router.push('/');
+      }
+      else{
+        router.push(`/verify-email?email=${encodeURIComponent(email)}`)
+      }
     }
   };
 
-  return (
+ return (
+  <div className={styles.pageWrapper}>
     <div className={styles.container}>
       <h2>Sign in</h2>
 
@@ -52,5 +60,7 @@ export default function SignIn() {
 
       <button className={styles.button} onClick={handleSignIn}>Sign in</button>
     </div>
-  );
+  </div>
+);
+
 }
