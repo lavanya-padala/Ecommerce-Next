@@ -4,7 +4,6 @@ import styles from './verify-email.module.css';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { verifyEmailServerAction } from './verify-email-server-action';
 import { resetCodeAction } from './resendCodeAction';
-import { Redressed } from 'next/font/google';
 
 export default function VerifyCodePage() {
     const searchParams = useSearchParams();

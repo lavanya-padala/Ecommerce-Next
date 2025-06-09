@@ -4,7 +4,6 @@ import Header from '../header/header'
 function page() {
   return (
     <div>
-      <Header/>
       <h1>This is sportswear section</h1>
     </div>
   )

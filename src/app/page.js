@@ -9,7 +9,6 @@ const page=async()=> {
   }
   return (
     <div>
-      <Header></Header>
       <h1>This is Main page</h1>
     </div>
   )

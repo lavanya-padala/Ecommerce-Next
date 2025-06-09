@@ -1,50 +1,40 @@
 
 
- .header {
-  display: flex;
-  align-items: center;
+.header {
+  background-color: #fff;
+  padding: 15px 20px;
+  border-bottom: 1px solid #eee;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  display: flex; 
   justify-content: space-between;
-  flex-wrap: wrap;
-  padding: 12px 20px;
-  border-bottom: 1px solid #ccc;
-  background-color: white;
-  flex-direction: row;
 }
 
 .topRow {
   display: flex;
   align-items: center;
-  flex: 1;
-  gap: 12px;
+  justify-content: space-between;
+  flex-grow: 1; 
 }
 
-.logo {
-  flex-shrink: 0;
-}
 .logo img {
-  height: 40px;
+  height: 40px; 
 }
 
 .search {
   flex-grow: 1;
-  min-width: 150px;
-  margin-right: 40px; /* adjust as needed */
+  margin: 0 20px;
 }
 
 .search input {
   width: 100%;
-  padding: 6px 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-.nav a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
 }
 
 .menuToggle {
-  display: none;
+  display: none; 
   font-size: 1.8rem;
   cursor: pointer;
 }
@@ -52,50 +42,175 @@
 .nav {
   display: flex;
   gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-.icons {
-  display: flex;
-  gap: 16px;
-}
-
-.icons a{
-  margin-left: 10px;
+.nav a {
   text-decoration: none;
   color: #333;
   font-weight: 500;
+  padding: 5px 0;
+  transition: color 0.2s ease;
+}
+
+.nav a:hover {
+  color: #007bff;
+}
+
+
+
+.userMenu {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.userMenu span {
+  padding: 5px 10px; 
+  color: #333;
+  font-weight: 500;
+  white-space: nowrap; 
+  display: inline-block; 
+  transition: background-color 0.2s ease; 
+
+}
+
+.userMenu:hover span {
+  background-color: #f0f0f0; 
+  border-radius: 3px; 
+}
+
+.dropdownt {
+  display: none; 
+  position: absolute;
+  background-color: #fff;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 10;
+  left: 0; 
+  top: 100%; 
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.userMenu:hover .dropdownt {
+  display: block;
+}
+
+.dropdownt a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  white-space: nowrap;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.dropdownt a:hover {
+  background-color: #ddd;
+}
+
+.signOutIcon {
+  height: 16px; 
+  width: 16px; 
+  vertical-align: middle; 
+  margin-right: 8px;
 }
 
 
 @media (max-width: 768px) {
   .header {
     flex-direction: column;
-    align-items: stretch;
-  }
-
-  .menuToggle {
-    display: block;
+    align-items: flex-start;
+    padding: 10px 15px;
   }
 
   .topRow {
-    flex-direction: row;
+    display: flex;
+    flex-wrap: nowrap; 
+    justify-content: space-between; 
+    width: 100%; 
+    align-items: center;
+    margin-bottom: 0; 
+  }
+
+  .logo img {
+    height: 30px; 
+    min-width: 30px;
+  }
+
+  .search {
+    flex-grow: 1; 
+    flex-shrink: 1; 
+    flex-basis: auto;
+    margin: 0 10px; 
+    min-width: 80px; 
+  }
+
+  .search input {
     width: 100%;
+    padding: 8px 10px;
+    font-size: 0.85rem; 
+  }
+
+  .menuToggle {
+    display: block; 
+    font-size: 1.5rem; 
+    margin-left: 0; 
+    min-width: 20px; 
   }
 
   .nav {
-    display: none;
     flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
     width: 100%;
-    margin-top: 10px;
+    display: none;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
   }
 
   .nav.open {
     display: flex;
   }
 
-  .icons {
-    display: none;
+  .nav a {
+    padding: 8px 0;
+    width: 100%;
   }
-  
-}
 
+  .userMenu {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .userMenu span {
+    padding: 8px 0;
+    width: 100%;
+  }
+
+  .dropdownt {
+    position: static;
+    box-shadow: none;
+    min-width: unset;
+    border-radius: 0;
+    border: none;
+    padding: 0;
+    background-color: transparent;
+  }
+
+  .dropdownt a {
+    padding-left: 30px;
+    color: #333;
+    font-size: 0.95rem;
+  }
+
+  .signOutIcon {
+    height: 14px;
+    width: 14px;
+    margin-right: 6px;
+  }
+}
